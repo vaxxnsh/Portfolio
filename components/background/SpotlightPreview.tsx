@@ -8,7 +8,7 @@ export function SpotlightBackground({children, className} : {
     className ?: ClassValue
 }) {
   return (
-    <div className="relative flex h-[100svh] w-full overflow-hidden bg-black/[0.96] antialiased md:pt-[6svw] justify-center">
+    <div className="relative flex h-[100svh] w-full overflow-auto no-scrollbar bg-black/[0.96] antialiased md:pt-[6svw] justify-center will-change-transform">
       <div
         className={cn(
           "pointer-events-none absolute inset-0 [background-size:40px_40px] select-none",

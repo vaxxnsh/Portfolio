@@ -1,19 +1,35 @@
 import GradientText from "@/components/GradientText";
 import IconWrapper from "@/components/wrappers/IconWrapper";
-import LinkButton from "@/components/buttons/LinkButton";
 import SpotifyPlayer from "@/components/SpotifyPlayer";
 import { SpotlightBackground } from "@/components/background/SpotlightPreview";
-import { File, Github, Linkedin, Mails } from "lucide-react";
+import { File, Github, Linkedin, Mails, SeparatorHorizontal } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 
 export default function Home() {
   return (  
-      <div className="h-screen flex-col box-border overflow-y-auto">
+      <div className="flex-col box-border">
        <SpotlightBackground>
           <HeroContent/>
-          <div>
+          <div className="relative mt-8 flex-col flex-wrap max-w-4xl"> 
+            <GradientText 
+              text={"About Me ..."}
+              className={"md:text-5xl"}
+            />
+
+            <p className="my-2 text-xl flex items-center w-full font-mono font-normal text-neutral-300">
+              I'm a full-stack engineer who enjoys solving real problems with clean, maintainable code. 
+              I work across the stack — designing intuitive frontends, building robust backends, and 
+              integrating the systems that connect them.<br/>
+
+              I care deeply about code quality, performance, and developer experience. <br/>Whether 
+              it’s building from scratch or improving existing systems, I approach every project 
+              with a focus on clarity, scalability, and user impact.<br/>
+
+              Curious by nature and driven by outcomes, I’m always exploring new tools, patterns, 
+              and technologies to stay sharp and deliver better solutions.
+            </p>
 
           </div>
         </SpotlightBackground>
@@ -96,7 +112,7 @@ function LinkBar() {
 
       <Link 
         target="_blank"
-        href="https://drive.google.com/file/d/1B4g8IEQ_E-_x9cmlIYHVe6whlaDKhuOL/view" 
+        href="https://drive.google.com/file/d/1rxWJ0_qwXJUo_ViIfq11ANIdEMdjc_I9/view" 
         className="group relative"
       >
         <IconWrapper>
