@@ -1,103 +1,111 @@
+import GradientText from "@/components/GradientText";
+import IconWrapper from "@/components/wrappers/IconWrapper";
+import LinkButton from "@/components/buttons/LinkButton";
+import SpotifyPlayer from "@/components/SpotifyPlayer";
+import { SpotlightBackground } from "@/components/background/SpotlightPreview";
+import { File, Github, Linkedin, Mails } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  return (  
+      <div className="h-screen flex-col box-border overflow-y-auto">
+       <SpotlightBackground>
+          <HeroContent/>
+          <div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          </div>
+        </SpotlightBackground>
+      </div>
   );
+}
+
+function HeroContent() {
+  return (
+    <>
+      <div className="relative w-full pt-20 md:pt-0 justify-start">
+        <div className="flex justify-between items-center w-full">
+          <div>
+            <GradientText text={"Hi, I'm Akshit."} />
+            <div className="p-1">
+              <p className="my-2 max-w-lg text-xl font-mono font-normal text-neutral-300">
+                20. Full stack mind. Rishikesh soul.
+              </p>
+              <LinkBar/>                  
+            </div>
+          </div>
+          <div className="p-1 backdrop-blur-md bg-white/10 border border-white/20 shadow-lg rounded-md">
+            <Image 
+              src={'/images/sukuna.jpg'}
+              width={200}
+              height={200}
+              className="rounded-lg aspect-square object-cover"
+              alt={'pfp'} />
+          </div>
+        </div>
+      </div>
+      <div className="relative mt-4">
+              <div className="flex gap-2 items-center">
+                <GradientText text={"Hustling in Code, Healing in Hip-Hop ❤️"} className={"text-2xl md:text-3xl"} />
+              </div>
+              <SpotifyPlayer/>
+      </div>
+    </>
+  )
+}
+function LinkBar() {
+  return (
+    <div className="flex flex-wrap space-x-3">
+      <Link
+        href="https://linkedin.com/in/akshit-padha-910a531ba/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group relative"
+      >
+        <IconWrapper>
+          <Linkedin color="white" />
+        </IconWrapper>
+        <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-white/10 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">
+          LinkedIn
+        </span>
+      </Link>
+
+      <Link
+        href="https://github.com/vaxxnsh"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group relative"
+      >
+        <IconWrapper>
+          <Github color="white" />
+        </IconWrapper>
+        <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-white/10 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">
+          GitHub
+        </span>
+      </Link>
+
+      <Link href="mailto:kakshit817@gmail.com" className="group relative">
+        <IconWrapper>
+          <Mails color="white" />
+        </IconWrapper>
+        <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-white/10 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">
+          Mail
+        </span>
+      </Link>
+
+      <Link 
+        target="_blank"
+        href="https://drive.google.com/file/d/1B4g8IEQ_E-_x9cmlIYHVe6whlaDKhuOL/view" 
+        className="group relative"
+      >
+        <IconWrapper>
+          <File color="white" />
+        </IconWrapper>
+        <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-white/10 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">
+          Resume
+        </span>
+      </Link>
+    </div>
+  )
 }
