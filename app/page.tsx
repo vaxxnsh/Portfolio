@@ -5,35 +5,33 @@ import { SpotlightBackground } from "@/components/background/SpotlightPreview";
 import { File, Github, Linkedin, Mails, SeparatorHorizontal } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import CardWrapper from "@/components/wrappers/CardWrapper";
+import PortfolioProjects from "@/components/ProjectSection";
+import { raleway } from "@/lib/font";
+import ClickSpark from "@/components/ui/Animations/ClickSpark/ClickSpark";
 
 
 export default function Home() {
-  return (  
-      <div className="flex-col box-border">
-       <SpotlightBackground>
-          <HeroContent/>
-          <div className="relative mt-8 flex-col flex-wrap max-w-4xl"> 
-            <GradientText 
-              text={"About Me ..."}
-              className={"md:text-5xl"}
-            />
-
-            <p className="my-2 text-xl flex items-center w-full font-mono font-normal text-neutral-300">
-              I'm a full-stack engineer who enjoys solving real problems with clean, maintainable code. 
-              I work across the stack — designing intuitive frontends, building robust backends, and 
-              integrating the systems that connect them.<br/>
-
-              I care deeply about code quality, performance, and developer experience. <br/>Whether 
-              it’s building from scratch or improving existing systems, I approach every project 
-              with a focus on clarity, scalability, and user impact.<br/>
-
-              Curious by nature and driven by outcomes, I’m always exploring new tools, patterns, 
-              and technologies to stay sharp and deliver better solutions.
-            </p>
-
-          </div>
-        </SpotlightBackground>
+  return (
+   
+      <div className="flex-col relative box-border">
+        <ClickSpark
+          sparkColor='#fff'
+          sparkSize={10}
+          sparkRadius={15}
+          sparkCount={8}
+          duration={400}
+          
+        >
+          <div className="min-h-screen relative">
+          <SpotlightBackground>
+            <HeroContent />
+            <PortfolioProjects />
+          </SpotlightBackground>
+        </div>
+        </ClickSpark>
       </div>
+  
   );
 }
 
@@ -66,6 +64,24 @@ function HeroContent() {
                 <GradientText text={"Hustling in Code, Healing in Hip-Hop ❤️"} className={"text-2xl md:text-3xl"} />
               </div>
               <SpotifyPlayer/>
+      </div>
+
+      <div className="relative mt-8 flex-col flex-wrap max-w-4xl"> 
+          <CardWrapper>
+            <div className="relative z-50 rounded-xl w-full overflow-hidden">
+              <div className="backdrop-blur-xl rounded-xl p-3 shadow-2xl border border-white/5">
+                <div className="mb-">
+                  <GradientText text={"About Me"} className={"text-2xl md:text-4xl"} />
+                  <div className="w-full h-px bg-white/10 my-2"></div>
+                </div>
+                <p className={`text-neutral-100 leading-relaxed ${raleway.className}`}>
+                  Full-stack engineer crafting clean, scalable solutions from frontend to backend. 
+                  I build with purpose — focusing on code quality, performance, and user impact. 
+                  Always curious, always learning, always delivering.
+                </p>
+              </div>
+            </div>
+            </CardWrapper>
       </div>
     </>
   )

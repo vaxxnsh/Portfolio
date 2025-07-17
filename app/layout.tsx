@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import StickyClock from "@/components/Clock";
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -29,8 +28,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-[#0a0a0a] antialiased`}
       >
-        <StickyClock/>
-        {children}    
+        
+          <StickyClock/>
+          {children}    
+
       </body>
     </html>
   );
