@@ -69,7 +69,7 @@ export default function PortfolioProjects() {
         {/* Header with tabs */}
         <div className="text-center mb-12">
           <div className="flex justify-center mb-8">
-            <div className="flex bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-lg p-1">
+            <div className="flex bg-black/[0.96] backdrop-blur-sm border border-gray-700/50 rounded-lg p-1">
               {["My Works", "Client Works"].map((tab) => (
                 <button
                   key={tab}
