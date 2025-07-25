@@ -4,7 +4,7 @@ import SpotifyPlayer from "../SpotifyPlayer"
 import CardWrapper from "../wrappers/CardWrapper"
 import Link from "next/link"
 import IconWrapper from "../wrappers/IconWrapper"
-import { File, Github, Linkedin, Mails } from "lucide-react"
+import { File, Github, Linkedin, Mails,} from "lucide-react"
 import { raleway } from "@/lib/font"
 
 export default function HeroSection() {
@@ -91,16 +91,16 @@ function LinkBar() {
       </Link>
       
       <Link
-        href="https://github.com/vaxxnsh"
+        href="https://leetcode.com/u/vaxxnsh/"
         target="_blank"
         rel="noopener noreferrer"
         className="group relative"
       >
-        <IconWrapper>
-          <Github color="white" />
+        <IconWrapper className='pt-2'>
+            <span className="text-white font-bold">LC</span>
         </IconWrapper>
         <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-white/10 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">
-          GitHub
+          Leetcode
         </span>
       </Link>
 
