@@ -5,6 +5,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
 import Footer from "@/components/sections/FooterSection";
 import VideoSection from "@/components/sections/VidsRecomendationSection";
+import BentoGrid from "@/components/sections/PhotoGridSection";
 
 
 
@@ -25,6 +26,7 @@ export default function Home() {
               <HeroSection/>
               <ExperienceSection/>
               <PortfolioProjects />
+              <BentoGrid/>
               <VideoSection/>
               <Footer/>
             </SpotlightBackground>
