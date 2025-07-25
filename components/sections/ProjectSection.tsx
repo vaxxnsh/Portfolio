@@ -1,63 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { ExternalLink, Github, ArrowUpRight } from "lucide-react"
+import { ExternalLink, Github, ArrowUpRight, Car } from "lucide-react"
 import { Button } from "@/components/ui/button"
-
-const projects = [
-  {
-    id: 1,
-    title: "HLS Transcoder - Video Processing with AWS & FFmpeg",
-    description:
-      "A scalable HLS transcoding system that processes videos using AWS S3, FFmpeg, and RabbitMQ. Supports multipart video uploads, background processing with child processes as workers, and efficient queue management for fault-tolerant transcoding.",
-    image: "/placeholder.svg?height=200&width=350",
-    status: "Developing...",
-    statusColor: "text-green-400",
-    tags: ["Node.js", "React.js", "FFmpeg", "AWS", "Child Process", "HLS Streaming"],
-    github: "https://github.com",
-    live: "https://example.com",
-    codePreview: true,
-  },
-  {
-    id: 2,
-    title: "botai - A bot that'll give you summary of your video call",
-    description:
-      "User can paste a meet link then the bot will automatically join the meeting. It'll record the session also generate the AI summary of the session",
-    image: "/placeholder.svg?height=200&width=350",
-    status: "Developing...",
-    statusColor: "text-green-400",
-    tags: ["Next.js", "OpenAI", "WebRTC", "Node.js", "AI/ML"],
-    github: "https://github.com",
-    live: "https://example.com",
-    codePreview: false,
-  },
-  {
-    id: 3,
-    title: "Real-time Chat Application",
-    description:
-      "A modern real-time chat app with WebSocket connections, message encryption, and beautiful UI. Features include typing indicators, message reactions, and file sharing capabilities.",
-    image: "/placeholder.svg?height=200&width=350",
-    status: "Completed",
-    statusColor: "text-blue-400",
-    tags: ["React", "Socket.io", "Node.js", "MongoDB", "JWT"],
-    github: "https://github.com",
-    live: "https://example.com",
-    codePreview: false,
-  },
-  {
-    id: 4,
-    title: "E-commerce Dashboard",
-    description:
-      "Full-stack e-commerce admin dashboard with analytics, inventory management, and order processing. Built with modern tech stack and responsive design.",
-    image: "/placeholder.svg?height=200&width=350",
-    status: "Completed",
-    statusColor: "text-blue-400",
-    tags: ["Next.js", "Prisma", "PostgreSQL", "Stripe", "Tailwind"],
-    github: "https://github.com",
-    live: "https://example.com",
-    codePreview: false,
-  },
-]
+import GradientText from "../GradientText"
+import CardWrapper from "../wrappers/CardWrapper"
+import { projects } from "@/lib/constants"
 
 export default function PortfolioProjects() {
   const [activeTab, setActiveTab] = useState("My Works")
@@ -67,36 +15,43 @@ export default function PortfolioProjects() {
     <div className="min-h-screen relative bg-transparent text-white px-6 py-16">
       <div className="max-w-6xl mx-auto">
         {/* Header with tabs */}
+        
         <div className="text-center mb-12">
           <div className="flex justify-center mb-8">
-            <div className="flex bg-black/[0.96] backdrop-blur-sm border border-gray-700/50 rounded-lg p-1">
+             
+            <div className="flex  backdrop-blur-sm rounded-lg p-1">
+              <CardWrapper className="inline-flex">
               {["My Works", "Client Works"].map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   className={`px-6 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
                     activeTab === tab
-                      ? "bg-gray-800 text-white border border-gray-600"
+                      ? "bg-black/60 text-white"
                       : "text-gray-400 hover:text-white"
                   }`}
                 >
                   {tab}
                 </button>
               ))}
+               </CardWrapper>
             </div>
+              
           </div>
+       
+          <GradientText 
+            text="My Featured Projects" 
+            className={`text-4xl md:text-5xl font-bold mb-6`} 
+          />
 
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Some of my cool shits</h1>
           <p className="text-gray-400 text-lg max-w-4xl mx-auto leading-relaxed">
-            I've worked on a variety of cool shits, from simple websites to mobile apps to complex ML Algorithms
-            projects. Here are a few of my favorites. You can find more on my{" "}
+            I've worked on a range of projects — from simple websites to full-stack applications and mobile apps. Here are a few highlights. You can explore more on my{" "}
             <a href="#" className="text-blue-400 hover:text-blue-300 transition-colors">
-              PROJECTS PAGE
+              projects page
             </a>
             .
           </p>
         </div>
-
         {/* Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project) => (
@@ -199,10 +154,14 @@ export default function PortfolioProjects() {
 
         {/* View More Button */}
         <div className="text-center mt-12">
-          <Button className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 text-white hover:bg-gray-700/50 hover:border-gray-600/70 transition-all duration-300 px-8 py-3">
-            View All Projects
-            <ArrowUpRight className="w-4 h-4 ml-2" />
-          </Button>
+            <div className="relative inline-block">
+              <CardWrapper className={'px-1 py-1 rounded-md'}>
+                <Button className="bg-black/50 backdrop-blur-sm border border-white/5 text-white hover:bg-black/70 hover:border-white/15 transition-all duration-300 px-8 py-3">
+                    View All Projects
+                    <ArrowUpRight className="w-4 h-4 ml-2" />
+                </Button>
+              </CardWrapper>
+            </div>
         </div>
       </div>
     </div>
