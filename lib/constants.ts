@@ -2,7 +2,7 @@ export const experiences = [
   {
     title: "Full-Stack Developer Intern",
     company: "Businessroom.ai",
-    duration: "Jan 2024 – Apr 2024",
+    duration: "Jan 2025 - Feb 2025",
     description:
       "Worked across the stack to build and ship scalable features in a LinkedIn-like platform for investors and entrepreneurs. Built interactive components, integrated APIs, optimized UX, and contributed to frontend and backend logic.",
     tech: ["React", "TypeScript", "Tailwind", "Zustand", "Node.js", "Express", "MySQL", "S3"],
@@ -10,10 +10,10 @@ export const experiences = [
   {
     title: "Freelance Developer",
     company: "Self-employed",
-    duration: "2023 – Present",
+    duration: "2025 - Present",
     description:
       "Collaborated with clients to build responsive websites and scalable full-stack solutions. Focused on clean UI, performance, SEO, and modern UX practices tailored to each client’s vision.",
-    tech: ["Next.js", "React", "Framer Motion", "Firebase", "Vercel", "Stripe"],
+    tech: ["Next.js", "React", "Framer Motion", "Prisma", "Vercel", "Razorpay"],
   },
 ]
 
@@ -69,5 +69,21 @@ export const projects = [
     github: "https://github.com",
     live: "https://example.com",
     codePreview: false,
+  },
+]
+
+
+export const videos = [
+  {
+    title: 'how hotstar scaled 25 million users',
+    href: 'https://youtu.be/9b7HNzBB3OQ?si=0QB12rckn9InGG6j',
+  },
+  {
+    title: 'From Meth To Netflix',
+    href: 'https://youtu.be/JjHFubUPLV0?si=W0mntSTUf2ZjghBc',
+  },
+  {
+    title: 'Next-door 10x engineer // PART 2',
+    href: 'https://youtu.be/3yeb5gSLnjw?si=vLp_CwdND6c5milU',
   },
 ]
