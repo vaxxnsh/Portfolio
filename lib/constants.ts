@@ -20,57 +20,89 @@ export const experiences = [
 export const projects = [
   {
     id: 1,
-    title: "HLS Transcoder - Video Processing with AWS & FFmpeg",
+    title: "Stock Exchange Platform",
+    isClient : false,
     description:
-      "A scalable HLS transcoding system that processes videos using AWS S3, FFmpeg, and RabbitMQ. Supports multipart video uploads, background processing with child processes as workers, and efficient queue management for fault-tolerant transcoding.",
-    image: "/placeholder.svg?height=200&width=350",
-    status: "Developing...",
-    statusColor: "text-green-400",
-    tags: ["Node.js", "React.js", "FFmpeg", "AWS", "Child Process", "HLS Streaming"],
-    github: "https://github.com",
-    live: "https://example.com",
-    codePreview: true,
+      "Built a low-latency, event-driven trading platform with WebSocket updates, Redis queues/pub-sub, and a modular matching engine running at 7–20ms latency.",
+    image: "/images/exchange.png",
+    status: "Completed",
+    statusColor: "text-blue-400",
+    tags: ["Next.js", "Redis", "WebSockets", "Express", "Docker", "TimescaleDB"],
+    github: "https://github.com/vaxxnsh/exchange-server",
+    live: "",
+    codePreview: false,
   },
   {
     id: 2,
-    title: "botai - A bot that'll give you summary of your video call",
+    title: "P2P File Storage System",
+    isClient : false,
     description:
-      "User can paste a meet link then the bot will automatically join the meeting. It'll record the session also generate the AI summary of the session",
-    image: "/placeholder.svg?height=200&width=350",
-    status: "Developing...",
-    statusColor: "text-green-400",
-    tags: ["Next.js", "OpenAI", "WebRTC", "Node.js", "AI/ML"],
-    github: "https://github.com",
-    live: "https://example.com",
+      "Developed a decentralized file storage system in Go with TCP networking, encrypted peer-to-peer transfers, and simulated multi-node synchronization.",
+    image: "/images/golang.jpg",
+    status: "Completed",
+    statusColor: "text-blue-400",
+    tags: ["Go", "TCP", "Encryption", "Distributed Systems", "Goroutines"],
+    github: "https://github.com/vaxxnsh/distributed-file-storage",
+    live: "",
+    codePreview: false,
+  },
+  {
+    id: 5,
+    title: "Apple Website UI",
+    isClient : false,
+    description:
+      "Recreated Apple's homepage with pixel-perfect UI, smooth animations, and responsive design inspired by Apple’s visual language.",
+    image: "/images/apple.png",
+    status: "Completed",
+    statusColor: "text-blue-400",
+    tags: ["Next.js", "Tailwind","Three.js","Framer Motion", "UI/UX"],
+    github: "https://github.com/vaxxnsh/AppleWebsite", // Add link if available
+    live: "https://ui-apple.vaxxnsh.tech",
+    codePreview: false,
+  },
+  {
+    id: 6,
+    title: "Metroidvania Game",
+    description:
+      "Designed and developed a Metroidvania-style game using Kaplay, featuring non-linear level design, character upgrades, and dynamic enemy interactions across a pixel-art world.",
+    image: "/images/metroidvania.png",
+    status: "Completed",
+    statusColor: "text-blue-400",
+    tags: ["Kaplay", "Typescript", "2D Platformer", "Pixel Art", "Level Design"],
+    github: "https://github.com/vaxxnsh/metroidvania", // Add if code/assets are public
+    live: "https://game.vaxxnsh.tech/",   // Add if hosted (e.g. Itch.io or custom page)
     codePreview: false,
   },
   {
     id: 3,
-    title: "Real-time Chat Application",
+    title: "Zap8n — Workflow Automation Platform",
+    isClient : false,
     description:
-      "A modern real-time chat app with WebSocket connections, message encryption, and beautiful UI. Features include typing indicators, message reactions, and file sharing capabilities.",
-    image: "/placeholder.svg?height=200&width=350",
-    status: "Completed",
-    statusColor: "text-blue-400",
-    tags: ["React", "Socket.io", "Node.js", "MongoDB", "JWT"],
-    github: "https://github.com",
-    live: "https://example.com",
+      "Created an event-driven automation platform with Kafka, Solana blockchain triggers, and reliable task orchestration using the Transactional Outbox Pattern.",
+    image: "/images/zap8n.png",
+    status: "In Progress",
+    statusColor: "text-green-400",
+    tags: ["Kafka", "Solana", "Next.js", "Docker", "Express", "PostgreSQL"],
+    github: "https://github.com/vaxxnsh/zap8n",
+    live: "",
     codePreview: false,
   },
   {
     id: 4,
-    title: "E-commerce Dashboard",
+    title: "Rudraksha E-commerce Platform",
+    isClient : true,
     description:
-      "Full-stack e-commerce admin dashboard with analytics, inventory management, and order processing. Built with modern tech stack and responsive design.",
-    image: "/placeholder.svg?height=200&width=350",
+      "Developed a full-stack e-commerce platform with Razorpay payments, Prisma ORM, and a rich UI built using GSAP and Swiper.js.",
+    image: "/images/rudraksha.png",
     status: "Completed",
     statusColor: "text-blue-400",
-    tags: ["Next.js", "Prisma", "PostgreSQL", "Stripe", "Tailwind"],
-    github: "https://github.com",
-    live: "https://example.com",
+    tags: ["Next.js", "Prisma", "PostgreSQL", "Razorpay", "GSAP", "Tailwind"],
+    github: "", // Add link if available
+    live: "",
     codePreview: false,
   },
-]
+];
+
 
 
 export const videos = [
