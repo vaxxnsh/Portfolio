@@ -24,7 +24,10 @@ export function SpotlightBackground({children, className} : {
         )}
         fill="white"
       />
-      <div className="flex justify-center md:pt-[6svw] w-full overflow-y-auto no-scrollbar">
+      <div className={cn(
+        "flex justify-center  w-full overflow-y-auto no-scrollbar",
+        className
+      )}>
         <div className={cn("max-w-3xl")}>
         {children}
       </div>

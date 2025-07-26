@@ -1,14 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { ExternalLink, Github, ArrowUpRight, Car } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { ExternalLink, Github, ArrowUpRight, Car, Home } from "lucide-react"
 import GradientText from "../GradientText"
 import CardWrapper from "../wrappers/CardWrapper"
 import { projects } from "@/lib/constants"
 import Link from "next/link"
 
-export default function PortfolioProjects() {
+export default function PortfolioProjects({showAll = false} : {showAll ?: boolean}) {
   const tabs = ["My Works", "Client Works"];
   const [activeTab, setActiveTab] = useState(tabs[0])
   const [hoveredProject, setHoveredProject] = useState<number | null>(null)
@@ -41,22 +40,28 @@ export default function PortfolioProjects() {
               
           </div>
        
-          <GradientText 
+          
+
+          {
+            !showAll && 
+            <>
+            <GradientText 
             text="My Featured Projects" 
             className={`text-4xl md:text-5xl font-bold mb-6`} 
-          />
-
-          <p className="text-gray-400 text-lg max-w-4xl mx-auto leading-relaxed">
-            I've worked on a range of projects — from simple websites to full-stack applications and mobile apps. Here are a few highlights. You can explore more on my{" "}
-            <Link href="/projects" className="text-blue-400 hover:text-blue-300 transition-colors">
-              projects page
-            </Link>
-            .
-          </p>
+            />
+            <p className="text-gray-400 text-lg max-w-4xl mx-auto leading-relaxed">
+              I've worked on a range of projects — from simple websites to full-stack applications and mobile apps. Here are a few highlights. You can explore more on my{" "}
+              <Link href="/projects" className="text-blue-400 hover:text-blue-300 transition-colors">
+                projects page
+              </Link>
+              .
+            </p>
+            </>
+          }
         </div>
         {/* Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {(activeTab === tabs[0] ? projects.filter((p) => !p.isClient) : projects.filter((p) => p.isClient)).slice(0,4).map((project) => (
+          {(activeTab === tabs[0] ? projects.filter((p) => !p.isClient) : projects.filter((p) => p.isClient)).slice(0,showAll ? projects.length : 4).map((project) => (
             <div
               key={project.id}
               className="group relative"
@@ -130,23 +135,26 @@ export default function PortfolioProjects() {
         </div>
 
         {/* View More Button */}
-        <div className="text-center mt-12">
+        
+           
+          <div className="text-center mt-12">
             <div className="relative inline-block">
               <CardWrapper className={'px-1 py-1 rounded-md'}>
                 <Link 
-                  href={'/projects'}
+                  href={showAll ? '/' : '/projects'}
                   className="flex p-0"
                 >
                   <button
                     className="bg-black/50 flex items-center justify-center backdrop-blur-sm border border-white/5 text-white hover:bg-black/70 hover:border-white/15 transition-all duration-300 px-4 py-2"
                   >
-                    View All Projects
-                    <ArrowUpRight className="w-4 h-4 ml-2" />
+                    {showAll ? 'Home' : 'View All Projects'}
+                    {!showAll ? <ArrowUpRight className="w-4 h-4 ml-2" /> : <Home className="w-4 h-4 ml-2" />}
                   </button>
                 </Link>
               </CardWrapper>
             </div>
         </div>
+        
       </div>
     </div>
   )

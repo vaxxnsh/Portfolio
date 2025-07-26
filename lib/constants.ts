@@ -88,6 +88,39 @@ export const projects = [
     codePreview: false,
   },
   {
+  id: 7,
+  title: "RSS Blog Aggregator Backend",
+  description:
+    "Developed a backend service in Go to fetch, parse, and store RSS feed posts using PostgreSQL. Implemented REST APIs with chi, typed queries via sqlc, and schema migrations with goose.",
+  image: "/images/rss.webp",
+  status: "Completed",
+  statusColor: "text-blue-400",
+  tags: ["Go", "PostgreSQL", "Chi", "RSS", "sqlc", "Goose", "REST API"],
+  github: "https://github.com/vaxxnsh/rss-aggregator",
+  live: "", // Add if hosted
+  codePreview: false,
+},
+{
+  id: 8,
+  title: "Pokedex Mobile App",
+  description:
+    "Built a modern mobile Pokedex using Expo Router, React Native, and React Query. Features include dynamic Pokémon search, categorized tabs, and optimized performance with FlashList and native animations.",
+  image: "/images/pokemon.png",
+  status: "Completed",
+  statusColor: "text-blue-400",
+  tags: [
+    "Expo",
+    "React Native",
+    "Expo Router",
+    "React Query",
+    "Zustand",
+    "TailwindCSS",
+  ],
+  github: "https://github.com/vaxxnsh/Pokedex", // Add if public
+  live: "",   // Add if hosted or shared via Expo
+  codePreview: true,
+},
+  {
     id: 4,
     title: "Rudraksha E-commerce Platform",
     isClient : true,
@@ -98,7 +131,7 @@ export const projects = [
     statusColor: "text-blue-400",
     tags: ["Next.js", "Prisma", "PostgreSQL", "Razorpay", "GSAP", "Tailwind"],
     github: "", // Add link if available
-    live: "",
+    live: "https://www.narayanarudraksha.com/",
     codePreview: false,
   },
 ];

@@ -22,14 +22,10 @@ export default function Home() {
         >
          
           <div className="min-h-screen relative">
-            <SpotlightBackground
-              className={'md:pt-[6svw]'}
-            >
-              <HeroSection/>
-              <ExperienceSection/>
-              <PortfolioProjects />
-              <BentoGrid/>
-              <VideoSection/>
+            <SpotlightBackground>
+              <PortfolioProjects 
+                showAll
+              />
               <Footer/>
             </SpotlightBackground>
           </div>
